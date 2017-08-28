@@ -28,6 +28,8 @@ app.constant('JS_REQUIRES', {
         'touchspin-plugin': ['/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js', '/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'],
 
         //*** Controllers
+        'categoryCtrl': '/client/script/controllers/categoryCtrl.js',
+
         'dashboardCtrl': '/client/script/controllers/dashboardCtrl.js',
         'iconsCtrl': '/client/script/controllers/iconsCtrl.js',
         'vAccordionCtrl': '/client/script/controllers/vAccordionCtrl.js',

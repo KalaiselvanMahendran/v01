@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// database connection
+var sequelize = require('./config/connection')();
+
 var app = express();
 
 // view engine setup
@@ -25,6 +28,10 @@ app.use('/client', express.static(path.resolve(__dirname, 'client')));
 var index = express.Router();
 require('./routes/index')(index);
 app.use('/', index);
+
+var api = express.Router();
+require('./routes/user')(api, sequelize);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
