@@ -1,16 +1,17 @@
 'use strict';
-/**
-  * controller for angular-aside
-  * Off canvas side menu to use with ui-bootstrap. Extends ui-bootstrap's $uibModal provider.
-*/
-app.controller('AsideCtrl', ["$scope", "$aside", function ($scope, $aside) {
-    $scope.openAside = function (position) {
+
+app.controller('usersCtrl', function ($scope, $aside) {
+
+	$scope.user = {};
+
+    $scope.openAside = function (position, actionName) {
         $aside.open({
             templateUrl: 'asideContent.html',
             placement: position,
-            size: 'sm',
+            size: 'md',
             backdrop: true,
             controller: function ($scope, $uibModalInstance) {
+                $scope.actionMethod = actionName;
                 $scope.ok = function (e) {
                     $uibModalInstance.close();
                     e.stopPropagation();
@@ -22,4 +23,9 @@ app.controller('AsideCtrl', ["$scope", "$aside", function ($scope, $aside) {
             }
         });
     };
-}]);
+
+	$scope.submit = function() {
+		console.log($scope.user);
+	}
+
+});

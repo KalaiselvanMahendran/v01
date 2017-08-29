@@ -29,6 +29,12 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
     //
     // Set up the states
     $stateProvider
+    .state('app', {
+        url: "/app",
+        templateUrl: "/client/views/app.html",
+        resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
+        abstract: true
+    })
     .state('app.category', {
         url: "/category",
         templateUrl: "/client/views/category/index.html",
@@ -38,11 +44,14 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             label: 'Category'
         }
     })
-    .state('app', {
-        url: "/app",
-        templateUrl: "/client/views/app.html",
-        resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
-        abstract: true
+    .state('app.users', {
+        url: "/users",
+        templateUrl: "/client/views/user/index.html",
+        resolve: loadSequence('usersCtrl'),
+        title: "Users",
+        ncyBreadcrumb: {
+            label: 'Users'
+        }
     })
     .state('app.dashboard', {
         url: "/dashboard",

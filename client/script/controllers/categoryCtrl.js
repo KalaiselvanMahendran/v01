@@ -1,7 +1,11 @@
 'use strict';
 
 app.controller('categoryCtrl', function ($scope) {
-	
-	$scope.pageTitle = "Category";
+
+	$scope.category = {};
+
+	$scope.submit = function() {
+		console.log($scope.category);
+	}
 
 });

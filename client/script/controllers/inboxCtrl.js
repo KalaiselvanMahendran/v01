@@ -4,7 +4,7 @@
  */
 app.controller('InboxCtrl', ["$scope", "$state", "$interval",
 function($scope, $state, $interval) {
-	$scope.noAvatarImg = "assets/images/default-user.png";
+	$scope.noAvatarImg = "/images/default-user.png";
 	var date = new Date();
 	var d = date.getDate();
 	var m = date.getMonth();
@@ -14,7 +14,7 @@ function($scope, $state, $interval) {
 		"date" : new Date(y, m, d - 1, 19, 0),
 		"subject" : "Reference Request - Nicole Bell",
 		"email" : "stark@example.com",
-		"avatar" : "assets/images/avatar-6.jpg",
+		"avatar" : "/images/avatar-6.jpg",
 		"starred" : false,
 		"sent" : false,
 		"spam" : false,
@@ -26,7 +26,7 @@ function($scope, $state, $interval) {
 		"date" : new Date(y, m, d - 1, 18, 43),
 		"subject" : "Position requirements",
 		"email" : "patterson@example.com",
-		"avatar" : "assets/images/avatar-9.jpg",
+		"avatar" : "/images/avatar-9.jpg",
 		"starred" : true,
 		"sent" : false,
 		"read" : true,
@@ -38,7 +38,7 @@ function($scope, $state, $interval) {
 		"date" : new Date(y, m, d - 1, 17, 51),
 		"subject" : "Employer's job requirements",
 		"email" : "mary@example.com",
-		"avatar" : "assets/images/avatar-8.jpg",
+		"avatar" : "/images/avatar-8.jpg",
 		"starred" : false,
 		"sent" : false,
 		"read" : true,
@@ -61,7 +61,7 @@ function($scope, $state, $interval) {
 		"date" : new Date(y, m, d - 1, 12, 2),
 		"subject" : "Personal invitation",
 		"email" : "thompson@example.com",
-		"avatar" : "assets/images/avatar-3.jpg",
+		"avatar" : "/images/avatar-3.jpg",
 		"starred" : false,
 		"sent" : false,
 		"spam" : false,
@@ -83,7 +83,7 @@ function($scope, $state, $interval) {
 		"date" : new Date(y, m, d - 1, 10, 31),
 		"subject" : "Congratulations ",
 		"email" : "nicole@example.com",
-		"avatar" : "assets/images/avatar-2.jpg",
+		"avatar" : "/images/avatar-2.jpg",
 		"starred" : false,
 		"sent" : false,
 		"read" : true,
@@ -116,7 +116,7 @@ function($scope, $state, $interval) {
 		"date" : new Date(y, m, d - 2, 19, 59),
 		"subject" : "Sincere request to keep in touch.",
 		"email" : "kenneth@example.com",
-		"avatar" : "assets/images/avatar-5.jpg",
+		"avatar" : "/images/avatar-5.jpg",
 		"starred" : false,
 		"sent" : false,
 		"read" : true,
@@ -124,15 +124,15 @@ function($scope, $state, $interval) {
 		"content" : "<p>Dear Mr. Clarks,</p><p>I was shocked to see my letter after having just left and  part away from college just a couple of weeks ago. Well it’s my style to bring back together and  hold on to our college group who seems to get separated and  simply go along their own ways. Just giving it a sincere try, who wish to live life just like those college days, to share and  support for every minute crust and  fragments happening in the life.</p><p>So without any compulsion and  without any special invitation this is a one time offer cum request cum order to keep in touch and  also to live forever as best buddies. Hoping to see you at Café da Villa on this Sunday evening to celebrate our new beginning in a grand way.</p><p>Thanking you,</p>",
 		"id" : 50223465
 	}];
-	
-	
+
+
 	var incomingMessages = [
 		{
 			"from" : "Nicole Bell",
 			"date" : new Date(),
 			"subject" : "New Project",
 			"email" : "nicole@example.com",
-			"avatar" : "assets/images/avatar-2.jpg",
+			"avatar" : "/images/avatar-2.jpg",
 			"starred" : false,
 			"sent" : false,
 			"read" : false,
@@ -145,7 +145,7 @@ function($scope, $state, $interval) {
 			"date" : new Date(),
 			"subject" : "Apology",
 			"email" : "thompson@example.com",
-			"avatar" : "assets/images/avatar-3.jpg",
+			"avatar" : "/images/avatar-3.jpg",
 			"starred" : false,
 			"sent" : false,
 			"read" : false,
@@ -158,7 +158,7 @@ function($scope, $state, $interval) {
 			"date" : new Date(),
 			"subject" : "Congratulations ",
 			"email" : "mary@example.com",
-			"avatar" : "assets/images/avatar-8.jpg",
+			"avatar" : "/images/avatar-8.jpg",
 			"starred" : false,
 			"sent" : false,
 			"read" : false,
@@ -167,8 +167,8 @@ function($scope, $state, $interval) {
 			"id" : 50223468
 		}
 	];
-	
-	
+
+
 	$scope.scopeVariable = 1;
 	var loadMessage = function() {
 		$scope.messages.push(incomingMessages[$scope.scopeVariable-1]);

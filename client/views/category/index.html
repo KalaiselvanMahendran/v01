@@ -3,14 +3,13 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<h1 class="mainTitle">Category</h1>
-			<span class="mainDescription">{{pageTitle}}</span>
 		</div>
 		<div ncy-breadcrumb></div>
 	</div>
 </section>
 <!-- end: PAGE TITLE -->
 <!-- start: LINE CHART -->
-<div class="container-fluid container-fullw bg-white">
+<div class="container-fluid container-fullw bg-white" ng-controller="categoryCtrl">
 	<div class="row">
 		<div class="col-md-8">
 			<div class="table-responsive">
@@ -26,7 +25,10 @@
 						<tr>
 							<td></td>
 							<td></td>
-							<td></td>
+							<td>
+								<button type="button" class="btn btn-primary">Edit</button>
+								<button type="button" class="btn btn-danger">Delete</button>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -35,13 +37,13 @@
 		<div class="col-md-4">
 			<form role="form">
 				<legend>Create Category</legend>
-			
+
 				<div class="form-group">
 					<label for="">Category</label>
 					<input type="text" class="form-control" id="" placeholder="Enter category" ng-model="category.category">
 				</div>
-			
-				<button type="submit" class="btn btn-primary" ng-click="category()">Submit</button>
+
+				<button type="submit" class="btn btn-success" ng-click="submit()">Submit</button>
 			</form>
 		</div>
 	</div>

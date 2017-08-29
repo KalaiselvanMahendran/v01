@@ -1,0 +1,104 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle">User</h1>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: LINE CHART -->
+<div class="container-fluid container-fullw bg-white" ng-controller="usersCtrl">
+    <div class="user-create-btn" style="float: right">
+        <button type="button" class="btn btn-primary" ng-click="openAside('right', 'Create')">create</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- table -->
+    <div class="row">
+        <div class="table-responsive">
+             <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <span class="fa fa-pencil" ng-click="openAside('right', 'Update')"></span>
+                            &nbsp
+                            <span class="fa fa-trash"></span>
+                        </td>
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+    </div>
+
+    <!-- Aside form -->
+    <script type="text/ng-template" id="asideContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{actionMethod}} User</h3>
+        </div>
+        <div class="modal-body">
+            <form action="" method="POST" role="form">
+
+                 <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" id="" placeholder="Enter your name">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" id="" placeholder="Enter your email">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="text" class="form-control" id="" placeholder="Enter your password">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="">Confirm Password</label>
+                    <input type="text" class="form-control" id="" placeholder="Re Enter your password">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="">User Role</label>
+                    <select class="form-control" name="" id="">
+                        <option value="">Select user role</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Others</option>
+                    </select>
+                 </div>
+
+                 <div class="form-group">
+                    <label for="">Status</label>
+                    <select class="form-control" name="" id="">
+                        <option value="">Select user status</option>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                 </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok($event)">OK</button>
+            <button class="btn btn-primary" ng-click="cancel($event)">Cancel</button>
+        </div>
+    </script>
+
+</div>
