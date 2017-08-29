@@ -1,4 +1,4 @@
-module.exports = function(router, sequelize) {
+module.exports = function(router, sequelize, passport) {
 
 	var User = require('.././models/user.js')(sequelize);
 
@@ -19,38 +19,38 @@ module.exports = function(router, sequelize) {
     // login authentication
 
     // signup
-    // router.post('/signup', function(req, res, next) {
-    //     passport.authenticate('local-signup', function(err, user, info) {
-    //         if (err) { 
-    //             return next(err); 
-    //         }
-    //         if (!user) { 
-    //             res.json({success: true, message: info});
-    //         }
-    //         else {
-    //             res.json({success: true, message: "user created successfully"}) 
-    //         }
-    //     })(req, res, next);
-    // });
+    router.post('/signup', function(req, res, next) {
+        passport.authenticate('local-signup', function(err, user, info) {
+            if (err) { 
+                return next(err); 
+            }
+            if (!user) { 
+                res.json({success: true, message: info});
+            }
+            else {
+                res.json({success: true, message: "user created successfully"}) 
+            }
+        })(req, res, next);
+    });
 
     // login
-    // router.post('/login', function(req, res, next) {
-    //     passport.authenticate('local-login', function(err, user, info) {
-    //         if (err) { 
-    //             return next(err); 
-    //         }
-    //         if (!user) { 
-    //             res.json({success: true, message: info});
-    //         }
-    //         else {
-    //             req.logIn(user, function(err) {
-    //                 if (err) { 
-    //                     res.json({success: true, message: err});
-    //                 }
-    //                 res.json({success: false});
-    //             }); 
-    //         }
-    //     })(req, res, next);
-    // });
+    router.post('/login', function(req, res, next) {
+        passport.authenticate('local-login', function(err, user, info) {
+            if (err) { 
+                return next(err); 
+            }
+            if (!user) { 
+                res.json({success: true, message: info});
+            }
+            else {
+                req.logIn(user, function(err) {
+                    if (err) { 
+                        res.json({success: true, message: err});
+                    }
+                    res.json({success: false});
+                }); 
+            }
+        })(req, res, next);
+    });
 
 }

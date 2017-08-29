@@ -18,17 +18,23 @@
 						<tr>
 							<th>#</th>
 							<th>Category</th>
+							<th>Status</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td></td>
-							<td></td>
+						<tr ng-repeat="category in categories">
+							<td>{{$index+1}}</td>
+							<td>{{category.category}}</td>
+							<td>{{category.status}}</td>
 							<td>
-								<span class="fa fa-pencil"></span>
+								<a>
+									<span class="fa fa-pencil" ng-click="update(category.categoryId)"></span>
+								</a>
 	                            &nbsp
-	                            <span class="fa fa-trash"></span>
+	                            <a>
+	                            	<span class="fa fa-trash" ng-click="delete(category.categoryId)"></span>
+	                            </a>
 							</td>
 						</tr>
 					</tbody>
@@ -40,8 +46,17 @@
 				<legend>Create Category</legend>
 
 				<div class="form-group">
-					<label for="">Category</label>
-					<input type="text" class="form-control" id="" placeholder="Enter category" ng-model="category.category">
+					<label for="cat-name">Category</label>
+					<input type="text" class="form-control" id="cat-name" placeholder="Enter category" ng-model="category.category">
+				</div>
+
+				<div class="form-group">
+					<label for="cat-status">Status</label>
+					<select id="cat-status" class="form-control" required="required" ng-model="category.status">
+						<option value="">select status</option>
+						<option value="1">Active</option>
+						<option value="0">Inactive</option>
+					</select>
 				</div>
 
 				<button type="submit" class="btn btn-success" ng-click="submit()">Submit</button>

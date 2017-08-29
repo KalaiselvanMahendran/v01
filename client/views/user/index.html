@@ -31,12 +31,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr ng-repeat="user in users">
+                        <td>{{$index+1}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.userRole}}</td>
+                        <td>{{user.status}}</td>
                         <td>
                             <span class="fa fa-pencil" ng-click="openAside('right', 'Update')"></span>
                             &nbsp
@@ -54,31 +54,34 @@
             <h3 class="modal-title">{{actionMethod}} User</h3>
         </div>
         <div class="modal-body">
-            <form action="" method="POST" role="form">
+            <form role="form">
+                <div class="alert alert-{{alertType}}" ng-show="showMessage">
+                    <strong>{{message}}</strong>
+                </div>
 
                  <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" class="form-control" id="" placeholder="Enter your name">
+                    <label for="usr-name">Name</label>
+                    <input type="text" class="form-control" id="usr-name" placeholder="Enter your name" ng-model="user.name">
                  </div>
 
                  <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" id="" placeholder="Enter your email">
+                    <label for="usr-email">Email</label>
+                    <input type="text" class="form-control" id="usr-email" placeholder="Enter your email" ng-model="user.email">
                  </div>
 
                  <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="text" class="form-control" id="" placeholder="Enter your password">
+                    <label for="usr-pwd">Password</label>
+                    <input type="text" class="form-control" id="usr-pwd" placeholder="Enter your password" ng-model="user.password">
                  </div>
 
                  <div class="form-group">
-                    <label for="">Confirm Password</label>
-                    <input type="text" class="form-control" id="" placeholder="Re Enter your password">
+                    <label for="usr-cfm_pwd">Confirm Password</label>
+                    <input type="text" class="form-control" id="usr-cfm_pwd" placeholder="Re Enter your password" ng-model="user.confirm_password">
                  </div>
 
                  <div class="form-group">
                     <label for="">User Role</label>
-                    <select class="form-control" name="" id="">
+                    <select class="form-control" name="user_role" id="usr-role" ng-model="user.user_role">
                         <option value="">Select user role</option>
                         <option value="1">Admin</option>
                         <option value="2">Others</option>
@@ -87,7 +90,7 @@
 
                  <div class="form-group">
                     <label for="">Status</label>
-                    <select class="form-control" name="" id="">
+                    <select class="form-control" name="status" id="usr-status" ng-model="user.status">
                         <option value="">Select user status</option>
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
