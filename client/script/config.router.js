@@ -35,6 +35,17 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
         resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
         abstract: true
     })
+    // Dashboard
+    .state('app.dashboard', {
+        url: "/dashboard",
+        templateUrl: "/client/views/dashboard.html",
+        resolve: loadSequence('jquery-sparkline', 'dashboardCtrl'),
+        title: 'Dashboard',
+        ncyBreadcrumb: {
+            label: 'Dashboard'
+        }
+    })
+    // Category
     .state('app.category', {
         url: "/category",
         templateUrl: "/client/views/category/index.html",
@@ -44,6 +55,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             label: 'Category'
         }
     })
+    // Users
     .state('app.users', {
         url: "/users",
         templateUrl: "/client/views/user/index.html",
@@ -53,13 +65,14 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             label: 'Users'
         }
     })
-    .state('app.dashboard', {
-        url: "/dashboard",
-        templateUrl: "/client/views/dashboard.html",
-        resolve: loadSequence('jquery-sparkline', 'dashboardCtrl'),
-        title: 'Dashboard',
+    // Shop info
+    .state('app.shop_info', {
+        url: "/shop-info",
+        templateUrl: "/client/views/shop-info/index.html",
+        resolve: loadSequence('shopInfoCtrl'),
+        title: "Shop Info",
         ncyBreadcrumb: {
-            label: 'Dashboard'
+            label: 'Shop Info'
         }
     })
     .state('app.ui', {

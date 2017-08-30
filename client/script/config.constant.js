@@ -30,6 +30,7 @@ app.constant('JS_REQUIRES', {
         //*** Controllers
         'categoryCtrl': '/client/script/controllers/categoryCtrl.js',
         'usersCtrl': '/client/script/controllers/usersCtrl.js',
+        'shopInfoCtrl': '/client/script/controllers/shopInfoCtrl.js',
 
         'dashboardCtrl': '/client/script/controllers/dashboardCtrl.js',
         'iconsCtrl': '/client/script/controllers/iconsCtrl.js',

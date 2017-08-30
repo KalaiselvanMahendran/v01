@@ -1,0 +1,213 @@
+<!-- start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle">User</h1>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: LINE CHART -->
+<div class="container-fluid container-fullw bg-white" ng-controller="shopInfoCtrl">
+    <div class="user-create-btn" style="float: right">
+        <button type="button" class="btn btn-primary" ng-click="openAside('right', 'Create')">create</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- table -->
+    <div class="row">
+        <div class="table-responsive">
+             <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <span class="fa fa-pencil" ng-click="openAside('right', 'Update')"></span>
+                            &nbsp
+                            <span class="fa fa-trash"></span>
+                        </td>
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+    </div>
+
+    <!-- Aside form -->
+    <script type="text/ng-template" id="asideContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{actionMethod}} Shop</h3>
+        </div>
+        <div class="modal-body">
+            <form action="" method="POST" role="form">
+                <!-- Shop info -->
+                <fieldset>
+                    <legend>Shop Info</legend>
+
+					<div class="form-group">
+					   <label for="">Name</label>
+					   <input type="text" class="form-control" id="">
+					</div>
+
+					<div class="form-group">
+					   <label for="">Category</label>
+					   <select name="" id="" class="form-control">
+						   	<option value="">Select shop category</option>
+							<option value="">Mechanic Shop</option>
+							<option value="">Punchure Shop</option>
+							<option value="">Petrol Bunk</option>
+					   </select>
+					</div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                               <label for="">Email</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                               <label for="">Mobile</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+                    </div>
+					<div class="row">
+						<div class="col-md-6">
+                            <div class="form-group">
+                               <label for="">Landline</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+						<div class="col-md-6">
+                            <div class="form-group">
+                               <label for="">License No</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+					</div>
+					<div class="form-group">
+					   <label for="">Images</label>
+					   <input type="file" class="form-control" id="">
+					</div>
+                </fieldset>
+				<!-- Owner info -->
+				<fieldset>
+                    <legend>Owner Info</legend>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+                               <label for="">Name</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+                               <label for="">Email</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+                               <label for="">Mobile</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+					</div>
+				</fieldset>
+				<!-- Address -->
+				<fieldset>
+					<legend>Address</legend>
+					<div class="row">
+						<div class="col-md-2">
+							<div class="form-group">
+                               <label for="">Shop No</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+						<div class="col-md-10">
+							<div class="form-group">
+                               <label for="">Street</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+                               <label for="">Area</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+                               <label for="">City</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+                               <label for="">Country</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+                               <label for="">Pincode</label>
+                               <input type="text" class="form-control" id="">
+                            </div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Others</legend>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+                               <label for="">Working Hours</label>
+                               <select name="" id="" class="form-control">
+								    <option value="">Select working hours</option>
+								   	<option value="8">8</option>
+								   	<option value="12">12</option>
+                               		<option value="24">24</option>
+                               </select>
+                            </div>
+						</div>
+						<div class="col-md-6">
+							<label for="">Working Days</label>
+							<select name="" id="" class="form-control">
+								 <option value="">Select working days</option>
+								 <option value="5">5 Days</option>
+								 <option value="6">6 Days</option>
+								 <option value="7">7 Days</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok($event)">OK</button>
+            <button class="btn btn-primary" ng-click="cancel($event)">Cancel</button>
+        </div>
+    </script>
+
+</div>
