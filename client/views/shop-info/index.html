@@ -2,7 +2,7 @@
 <section id="page-title">
 	<div class="row">
 		<div class="col-sm-8">
-			<h1 class="mainTitle">User</h1>
+			<h1 class="mainTitle">Shop Info</h1>
 		</div>
 		<div ncy-breadcrumb></div>
 	</div>
@@ -61,30 +61,30 @@
 
 					<div class="form-group">
 					   <label for="">Name</label>
-					   <input type="text" class="form-control" id="">
+					   <input type="text" class="form-control" id="" placeholder="Enter shop name">
 					</div>
 
 					<div class="form-group">
-					   <label for="">Category</label>
-					   <select name="" id="" class="form-control">
-						   	<option value="">Select shop category</option>
-							<option value="">Mechanic Shop</option>
-							<option value="">Punchure Shop</option>
-							<option value="">Petrol Bunk</option>
-					   </select>
+						<lable>Category</lable> <br><br>
+						<div class="checkbox clip-check check-primary checkbox-inline" ng-repeat="category in categories">
+							<input type="checkbox" id="checkbox-category-{{category.value}}" value="{{category.value}}">
+							<label for="checkbox-category-{{category.value}}">
+								{{category.name}}
+							</label>
+						</div>
 					</div>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                <label for="">Email</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Enter shop email">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                <label for="">Mobile</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Enter shop mobile">
                             </div>
                         </div>
                     </div>
@@ -92,13 +92,13 @@
 						<div class="col-md-6">
                             <div class="form-group">
                                <label for="">Landline</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Enter shop landline">
                             </div>
                         </div>
 						<div class="col-md-6">
                             <div class="form-group">
                                <label for="">License No</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id=""  placeholder="Enter shop license number">
                             </div>
                         </div>
 					</div>
@@ -114,19 +114,19 @@
 						<div class="col-md-4">
 							<div class="form-group">
                                <label for="">Name</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Enter owner name">
                             </div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
                                <label for="">Email</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Enter owner email">
                             </div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
                                <label for="">Mobile</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Enter owner mobile">
                             </div>
 						</div>
 					</div>
@@ -138,13 +138,13 @@
 						<div class="col-md-2">
 							<div class="form-group">
                                <label for="">Shop No</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id=""  placeholder="Shop No">
                             </div>
 						</div>
 						<div class="col-md-10">
 							<div class="form-group">
                                <label for="">Street</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Street">
                             </div>
 						</div>
 					</div>
@@ -152,13 +152,13 @@
 						<div class="col-md-6">
 							<div class="form-group">
                                <label for="">Area</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Area">
                             </div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
                                <label for="">City</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="City">
                             </div>
 						</div>
 					</div>
@@ -166,41 +166,120 @@
 						<div class="col-md-6">
 							<div class="form-group">
                                <label for="">Country</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id="" placeholder="Country">
                             </div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
                                <label for="">Pincode</label>
-                               <input type="text" class="form-control" id="">
+                               <input type="text" class="form-control" id=""  placeholder="Pincode">
                             </div>
 						</div>
 					</div>
 				</fieldset>
 				<fieldset>
-					<legend>Others</legend>
+					<legend>Other Info</legend>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-                               <label for="">Working Hours</label>
-                               <select name="" id="" class="form-control">
-								    <option value="">Select working hours</option>
-								   	<option value="8">8</option>
-								   	<option value="12">12</option>
-                               		<option value="24">24</option>
-                               </select>
-                            </div>
+								<label class="block">
+									Working Hours
+								</label>
+								<div class="clip-radio radio-primary">
+									<input type="radio" id="12-hrs" name="working_hrs" value="12" checked="checked">
+									<label for="12-hrs">
+										12 Hrs
+									</label>
+									<input type="radio" id="24-hrs" name="working_hrs" value="24">
+									<label for="24-hrs">
+										24 Hrs
+									</label>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-6">
-							<label for="">Working Days</label>
-							<select name="" id="" class="form-control">
-								 <option value="">Select working days</option>
-								 <option value="5">5 Days</option>
-								 <option value="6">6 Days</option>
-								 <option value="7">7 Days</option>
-							</select>
+							<div class="form-group">
+								<lable>Working Days</lable>
+								<div class="checkbox clip-check check-primary" ng-repeat="day in days">
+									<input type="checkbox" id="checkbox-working_days-{{day.value}}" value="{{day.value}}">
+									<label for="checkbox-working_days-{{day.value}}">
+										{{day.day}}
+									</label>
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="block">
+									Credit/Debit Accept
+								</label>
+								<div class="clip-radio radio-primary">
+									<input type="radio" id="card-yes" name="card_accept" value="1"  checked="checked">
+									<label for="card-yes">
+										Yes
+									</label>
+									<input type="radio" id="card-no" name="card_accept" value="0">
+									<label for="card-no">
+										No
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="form-field-mask-3">
+											Shop Opening Time
+										</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="masked" placeholder="HH:MM">
+											<span class="input-group-addon"> AM</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="form-field-mask-3">
+											Shop Closing Time
+										</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="masked" placeholder="HH:MM">
+											<span class="input-group-addon"> PM</i> </span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<lable>Puncture available for Vehicles</lable> <br><br>
+						<div class="checkbox clip-check check-primary checkbox-inline" ng-repeat="vehicle in vehicles">
+							<input type="checkbox" id="checkbox-puncture-{{vehicle.value}}" value="{{vehicle.value}}">
+							<label for="checkbox-puncture-{{vehicle.value}}">
+								{{vehicle.name}}
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<lable>Mechanic available for Vehicles</lable> <br><br>
+						<div class="checkbox clip-check check-primary checkbox-inline" ng-repeat="vehicle in vehicles">
+							<input type="checkbox" id="checkbox-mechanic-{{vehicle.value}}" value="{{vehicle.value}}">
+							<label for="checkbox-mechanic-{{vehicle.value}}">
+								{{vehicle.name}}
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+					   <label for="">Minimum Radius</label>
+					   <input type="text" class="form-control" id="" placeholder="Kilometer">
+					</div>
+
 				</fieldset>
             </form>
         </div>

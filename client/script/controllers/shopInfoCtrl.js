@@ -22,6 +22,20 @@ app.controller('shopInfoCtrl', function ($scope, $aside, $http) {
                 $scope.actionMethod = actionName;
                 $scope.showMessage = false;
 
+				$scope.days = [
+								{day: "Monday", value: 1},
+								{day: "Tuesday", value: 2},
+								{day: "Wednesday", value: 3},
+								{day: "Thursday", value: 4},
+								{day: "Friday", value: 5},
+								{day: "Saturday", value: 6},
+								{day: "Sunday", value: 0}
+							];
+
+				$scope.categories = [{name: "Puncture Shop", value: 1}, {name: "Mechanic Shop", value: 2}, {name: "Petrol Bunk", value: 3}]
+
+				$scope.vehicles = [{name: "All", value: 1}, {name: "Car", value: 2}, {name: "Bike", value: 3}, {name: "Lorry", value: 4}, {name: "Bus", value: 5}, {name: "Truck", value: 6}];
+
                 // create
                 $scope.ok = function (e) {
                     if($scope.user.confirm_password != $scope.user.password || $scope.user.password != $scope.user.confirm_password) {
